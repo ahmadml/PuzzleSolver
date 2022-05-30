@@ -1,0 +1,10 @@
+IDA*
+no open
+small
+_,R,G
+B,G,R
+G,B,_
+Goal state:
+G,R,_
+B,G,R
+_,B,G
