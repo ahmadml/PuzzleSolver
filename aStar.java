@@ -65,8 +65,6 @@ public class aStar   {
 					//new son that never appear
 					son.setToatal_price((int) (son.getCost()  + parent.getToatal_price()));
 					son.setHeru_value((new heurstic().manhattan_algorithmD(son.getState(), this.board_goal.getState())));
-//					System.out.println(son.key);
-//					System.out.println(son.getHeru_value());
 					son.setF_G((int) ( son.getToatal_price() + son.getHeru_value() ));
 					my_queue.add(son);
 					openList.put(son.key, son);
@@ -121,8 +119,6 @@ public class aStar   {
 		if (!my_stack.isEmpty()) {
 			my_stack.pop();
 		}
-		//path += "-------------start-------------\n";
-		//path += this.start.toString()+'\n';
 		while(!my_stack.isEmpty()) 
 		{	
 			Node iter1 = my_stack.pop();
@@ -131,12 +127,9 @@ public class aStar   {
 			else
 				moves = moves + iter1.getMove()+"--";
 			cost += iter1.getCost();
-			//	path += iter1.toString();
-			//path +="\n";
 		}
-		//	path+="--------------And The Goal Has Been Found------------------";
+
 		out.setMoves(moves);
 		out.setCost(cost);
-		//		return path;
 	}
 }
