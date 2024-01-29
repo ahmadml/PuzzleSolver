@@ -74,7 +74,6 @@ public class IDA {
 							}
 						}
 						if(son.isGoal(board_goal)) {
-							//							System.out.println(son);
 							double end = System.currentTimeMillis();
 							double sec = (end - solve.time) / 1000.0;
 							this.out.setRuntime(sec);
@@ -83,7 +82,6 @@ public class IDA {
 						}
 						myStack.add(son);
 						H.put(son.key, son);
-						//num++;
 					}
 				}
 			}
@@ -122,12 +120,10 @@ public class IDA {
 			my_stack.push(son);
 			son = son.getParent();
 		}
-		//		String path ="";
 		if (!my_stack.isEmpty()) {
 			my_stack.pop();
 		}
-		//path += "-------------start-------------\n";
-		//path += this.start.toString()+'\n';
+
 		while(!my_stack.isEmpty()) 
 		{	
 			Node iter1 = my_stack.pop();
@@ -136,12 +132,10 @@ public class IDA {
 			else
 				moves = moves + iter1.getMove()+"--";
 			cost += iter1.getCost();
-			//	path += iter1.toString();
-			//path +="\n";
+
 		}
-		//	path+="--------------And The Goal Has Been Found------------------";
+
 		out.setMoves(moves);
 		out.setCost(cost);
-		//		return path;
 	}
 }
