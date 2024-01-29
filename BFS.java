@@ -90,12 +90,11 @@ public class BFS {
 			my_stack.push(son);
 			son = son.getParent();
 		}
-		//		String path ="";
+		
 		if (!my_stack.isEmpty()) {
 			my_stack.pop();
 		}
-		//path += "-------------start-------------\n";
-		//path += this.start.toString()+'\n';
+		
 		while(!my_stack.isEmpty()) 
 		{	
 			Node iter1 = my_stack.pop();
@@ -104,12 +103,11 @@ public class BFS {
 			else
 				moves = moves + iter1.getMove()+"--";
 			cost += iter1.getCost();
-			//	path += iter1.toString();
-			//path +="\n";
+			
 		}
-		//	path+="--------------And The Goal Has Been Found------------------";
+		
 		out.setMoves(moves);
 		out.setCost(cost);
-		//		return path;
+		
 	}
 }
